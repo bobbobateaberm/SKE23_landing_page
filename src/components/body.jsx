@@ -1,7 +1,7 @@
 import { useState } from 'react'
 
 function Body() {
-  const img_paths = ['/public/s1.png','/public/s2.png','/public/s3.png'];
+  const img_paths = ['/s1.png','/s2.png','/s3.png'];
   const [img , setImg] = useState(img_paths[0])
   const img_change = () => {
     const idx = Math.floor(Math.random() * img_paths.length)
