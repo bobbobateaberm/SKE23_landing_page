@@ -31,7 +31,7 @@ return (
 
         <Committee image_path="/c1.jpg" position="President"/>
         <Committee image_path="/c6.jpg" position="VC President 1"/>
-        <Committee image_path="/c6.jpg" position="VC President 2"/>
+        <Committee image_path="/c6.JPG" position="VC President 2"/>
         <Committee image_path="/c2.jpg" position="Secretary 1"/>
         <Committee image_path="/c3.png" position="Secretary 2"/>
 
