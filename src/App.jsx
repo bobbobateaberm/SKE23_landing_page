@@ -29,18 +29,18 @@ return (
         <h2 className='mt-10 mb-10 font-bold'>Management Team</h2>
         <div className='flex flex-row justify-center'>
 
-        <Committee image_path="/public/c1.jpg" position="President"/>
-        <Committee image_path="/public/c6.jpg" position="VC President 1"/>
-        <Committee image_path="/public/c6.jpg" position="VC President 2"/>
-        <Committee image_path="/public/c2.jpg" position="Secretary 1"/>
-        <Committee image_path="/public/c3.png" position="Secretary 2"/>
+        <Committee image_path="/c1.jpg" position="President"/>
+        <Committee image_path="/c6.jpg" position="VC President 1"/>
+        <Committee image_path="/c6.jpg" position="VC President 2"/>
+        <Committee image_path="/c2.jpg" position="Secretary 1"/>
+        <Committee image_path="/c3.png" position="Secretary 2"/>
 
         </div>
           <div className='flex flex-row justify-center'>
-        <Committee image_path="/public/c1.jpg" position="Treasurer"/>
-        <Committee image_path="/public/c6.jpg" position="Coperate Communication"/>
-        <Committee image_path="/public/c2.jpg" position="Graphic Design"/>
-        <Committee image_path="/public/c3.png" position="Presenter"/>
+        <Committee image_path="/c1.jpg" position="Treasurer"/>
+        <Committee image_path="/c6.jpg" position="Coperate Communication"/>
+        <Committee image_path="/c2.jpg" position="Graphic Design"/>
+        <Committee image_path="/c3.png" position="Presenter"/>
         </div>
 
       <hr className='w-[1200px] ml-auto mr-auto m-10'/>
@@ -58,14 +58,14 @@ return (
       <div className='carreer-section flex flex-col justify-center text-center'>
         <h2 className='mt-10 mb-10 font-bold'>Development Team</h2>
         <div className='flex flex-row justify-center'>
-        <Committee image_path="/public/c4.jpg" position="Lead Developer"/>
-        <Committee image_path="/public/c5.jpg" position="Developer 1"/>
-        <Committee image_path="/public/c2.jpg" position="Developer 2"/>
-        <Committee image_path="/public/c3.png" position="Developer 3"/>
+        <Committee image_path="/c4.jpg" position="Lead Developer"/>
+        <Committee image_path="/c5.jpg" position="Developer 1"/>
+        <Committee image_path="/c2.jpg" position="Developer 2"/>
+        <Committee image_path="/c3.png" position="Developer 3"/>
         </div>
 
         <div className=' flex flex-col justify-center ml-auto mr-auto w-[1050px] m-5 mt-48 mb-48 bg-black p-5  rounded-2xl'>
-        <h1 className='text-5xl mt-5 mb-5 font-bold text-white inline-block'>Discord Community <img className='inline-block rounded-4xl  w-20' src='/public/discord.png'/> </h1>
+        <h1 className='text-5xl mt-5 mb-5 font-bold text-white inline-block'>Discord Community <img className='inline-block rounded-4xl  w-20' src='/discord.png'/> </h1>
         
         <div className=' flex flex-row ml-auto mr-auto'>
           <a className= 'mt-5 mb-10 m-5'href='https://discord.gg/FkKtkcu4'><iframe src="https://discord.com/widget?id=1&theme=dark"  width="350"height="400"allowtransparency="true"frameborder="0"sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></a>
