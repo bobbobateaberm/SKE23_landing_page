@@ -69,9 +69,7 @@ h2{
     width: 100%;
     height: 100%;
 }
-.carreer-info{
-    display: none;
-}
+
 .img_button{
     width: 100%;
     height: 100%;
@@ -165,3 +163,13 @@ h2{
   }
 }
 
+
+.name{
+  background-color: rgb(8, 20, 46);
+  border-color: rgb(6, 15, 35);
+  transition: 0.3s;
+}
+.name:hover{
+  background-color: rgb(13, 32, 73);
+  border-color: rgb(3, 6, 14);
+}

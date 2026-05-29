@@ -29,7 +29,7 @@ function Footer() {
       </div>
 
       <div className="footer-bottom">
-        © 2026 YourWebsite · All rights reserved
+        © 2026 SKE23 · All rights reserved
       </div>
     </footer>
   )
