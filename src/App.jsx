@@ -1,87 +1,355 @@
-import { useState } from 'react'
-import  Footer from './components/footer'
-import  Navbar  from './components/navbar';
-import  Body  from './components/body';
-import  Hero  from './components/hero';
-import './App.css'
+import { useState } from "react";
 
-const Committee = ({image_path, position}) => {
-  return (
-        <div className='committee flex flex-col items-center m-5'>
-          <img src={image_path} className='object-cover m-5' />
-          <p className='font-light'>{position}</p>
-        </div>
-  )
-};
+import Navbar from "./components/navbar";
+import Hero from "./components/hero";
+import Body from "./components/body";
+import Footer from "./components/footer";
 
+import "./App.css";
+
+const Committee = ({ image_path, position }) => (
+  <div
+    className="
+      group flex flex-col items-center
+      bg-[#0f172a] border border-[#1e293b]
+      rounded-3xl p-6 backdrop-blur-xl
+      shadow-xl hover:border-blue-500
+      hover:shadow-blue-900/40 hover:-translate-y-2
+      transition duration-500
+    "
+  >
+    <img
+      src={image_path}
+      alt={position}
+      className="
+        w-[170px] h-[170px]
+        sm:w-[220px] sm:h-[220px]
+        rounded-full object-cover
+        border-4 border-[#172554]
+        group-hover:border-blue-500
+        transition
+      "
+    />
+
+    <h3 className="mt-6 text-white text-lg font-semibold">
+      {position}
+    </h3>
+  </div>
+);
 
 function App() {
+  const management = [
+    ["President", "/c1.jpg", "Suppamok Tosranon (Jimmy) 6810545921"],
+    ["VC President 1", "/c6.jpg", "Piyatida Muanjaingam (Ploy) 6810545760"],
+    ["VC President 2", "/c6.JPG", "Siraphob Phonphakdee (Peem) 6810545930"],
+    ["Secretary 1", "/c2.jpg", "Phunnipath Theankaew (Nice) 6810545816"],
+    ["Secretary 2", "/c3.png", "Apichai Pattanakamolkul (Ess) 6810545972"],
+    ["Treasurer", "/c1.jpg", "Chatthaya Tipatnaranan (Ping) 6810545531"],
+    ["Corporate Communication", "/c6.jpg", "Thunyasorn Chaliasomboon (Dear) 6810545689"],
+    ["Graphic Design", "/c2.jpg", "Chayapol Kaewsakul (Kew) 6810545557"]
+  ];
 
-return (
-  <main className='p-0'>
-    <Navbar />
-    <Hero />
-      <div className='content'>
-        <Body />
-      </div>
+const [selectedDev, setSelectedDev] =
+  useState("Select developer");
 
-      <div className='carreer-section flex flex-col justify-center text-center'>
-        <h2 className='mt-10 mb-10 font-bold'>Management Team</h2>
-        <div className='flex flex-row justify-center'>
+const developers = [
+  ["Lead Developer", "/c4.jpg", "John (Lead)"],
+  ["Developer 1", "/c5.jpg", "Alice"],
+  ["Developer 2", "/c2.jpg", "Bob"],
+  ["Developer 3", "/c3.png", "Charlie"],
+];
 
-        <Committee image_path="/c1.jpg" position="President"/>
-        <Committee image_path="/c6.jpg" position="VC President 1"/>
-        <Committee image_path="/c6.jpg" position="VC President 2"/>
-        <Committee image_path="/c2.jpg" position="Secretary 1"/>
-        <Committee image_path="/c3.png" position="Secretary 2"/>
+  const [selected, setSelected] = useState(
+    "Select committee member"
+  );
 
-        </div>
-          <div className='flex flex-row justify-center'>
-        <Committee image_path="/c1.jpg" position="Treasurer"/>
-        <Committee image_path="/c6.jpg" position="Coperate Communication"/>
-        <Committee image_path="/c2.jpg" position="Graphic Design"/>
-        <Committee image_path="/c3.png" position="Presenter"/>
-        </div>
+  return (
+    <main className="bg-[#020617]">
+      <Navbar />
+      <Hero />
 
-      <hr className='w-[1200px] ml-auto mr-auto m-10'/>
-      <p className='career-info'>Suppamok Tosranon (Jimmy) 6810545921</p>
-      <p className='career-info'>Piyatida Muanjaingam (Ploy) 6810545760</p>
-      <p className='career-info'>Siraphob Phonphakdee (Peem) 6810545930</p>
-      <p className='career-info'>Phunnipath Theankaew (Nice) 6810545816</p>
-      <p className='career-info'>Apichai Pattanakamolkul (Ess) 6810545972</p>
-      <p className='career-info'>Chatthaya Tipatnaranan (Ping) 6810545531</p>
-      <p className='career-info'>Thunyasorn Chaliasomboon (Dear) 6810545689</p>
-      <p className='career-info'>Chayapol Kaewsakul (Kew) 6810545557</p>
-      <p className='career-info'>Phutharak Wongpitak (Q) 6810545841</p>
-      </div>
-
-      <div className='carreer-section flex flex-col justify-center text-center'>
-        <h2 className='mt-10 mb-10 font-bold'>Development Team</h2>
-        <div className='flex flex-row justify-center'>
-        <Committee image_path="/c4.jpg" position="Lead Developer"/>
-        <Committee image_path="/c5.jpg" position="Developer 1"/>
-        <Committee image_path="/c2.jpg" position="Developer 2"/>
-        <Committee image_path="/c3.png" position="Developer 3"/>
+      <section className="bg-gradient-to-b from-[#020617] via-[#081124] to-[#09172b]">
+        <div className="content">
+          <Body />
         </div>
 
-        <div className=' flex flex-col justify-center ml-auto mr-auto w-[1050px] m-5 mt-48 mb-48 bg-black p-5  rounded-2xl'>
-        <h1 className='text-5xl mt-5 mb-5 font-bold text-white inline-block'>Discord Community <img className='inline-block rounded-4xl  w-20' src='/discord.png'/> </h1>
-        
-        <div className=' flex flex-row ml-auto mr-auto'>
-          <a className= 'mt-5 mb-10 m-5'href='https://discord.gg/FkKtkcu4'><iframe src="https://discord.com/widget?id=1&theme=dark"  width="350"height="400"allowtransparency="true"frameborder="0"sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></a>
-          <a className= 'mt-5 mb-10 m-5'href='https://discord.gg/FkKtkcu4'><iframe src="https://discord.com/widget?id=1397550111344558201&theme=dark"  width="350"height="400"allowtransparency="true"frameborder="0"sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe></a>
+        {/* MANAGEMENT */}
 
-        </div>
+        <section className="px-6 py-24">
+          <h2 className="text-center text-white text-5xl font-bold mb-16">
+            Management Team
+          </h2>
 
+      <div
+  className="
+    max-w-7xl
+    mx-auto
+    min-h-[70vh]
+    flex
+    flex-wrap
+    items-center
+    justify-center
+    gap-10
+  "
+>
+  {management.map(([role, img, name], i) => (
+    <button
+      key={i}
+      onClick={() => setSelected(name)}
+      className="
+        flex
+        justify-center
+        items-center
+      "
+    >
+      <Committee
+        image_path={img}
+        position={role}
+      />
+    </button>
+  ))}
+</div>
 
+          <div className="mt-16 max-w-3xl mx-auto terminal animate-fade-up">
+            <div className="terminal-header">
+              <div className="terminal-buttons">
+                <span />
+                <span />
+                <span />
+              </div>
+
+              <p className="terminal-title">
+                terminal — committee.exe
+              </p>
+            </div>
+
+            <div className="terminal-body">
+              <p className="terminal-line">
+                <span className="terminal-user">
+                  visitor@committee:
+                </span>
+
+                <span className="terminal-path">
+                  ~/members
+                </span>
+
+                $ <span className="typing">select_member</span>
+              </p>
+
+              <p className="terminal-output">
+                &gt; {selected}
+                <span className="cursor"></span>
+              </p>
+            </div>
+          </div>
+        </section>
+{/* DEVELOPMENT */}
+
+<section className="px-6 pb-32">
+
+  <h2 className="text-center text-white text-5xl mb-16">
+    Development Team
+  </h2>
+
+  <div
+    className="
+      max-w-7xl
+      mx-auto
+      grid
+      grid-cols-1
+      sm:grid-cols-2
+      lg:grid-cols-4
+      gap-10
+    "
+  >
+    {developers.map(([role, img, name], i) => (
+      <button
+        key={i}
+        onClick={() => setSelectedDev(name)}
+      >
+        <Committee
+          image_path={img}
+          position={role}
+        />
+      </button>
+    ))}
+  </div>
+
+  {/* DEV TERMINAL */}
+
+  <div
+    className="
+      mt-16
+      max-w-4xl
+      mx-auto
+      overflow-hidden
+      rounded-[28px]
+      border
+      border-cyan-900
+      bg-[#030712]
+      shadow-[0_0_100px_rgba(0,100,255,.12)]
+    "
+  >
+
+    <div
+      className="
+        flex
+        items-center
+        justify-between
+        px-6
+        py-4
+        border-b
+        border-slate-800
+      "
+    >
+      <div className="flex gap-2">
+        <span className="w-3 h-3 rounded-full bg-red-500" />
+        <span className="w-3 h-3 rounded-full bg-yellow-400" />
+        <span className="w-3 h-3 rounded-full bg-green-500" />
       </div>
 
+      <p
+        className="
+          text-cyan-400
+          text-sm
+          font-mono
+        "
+      >
+        developer-shell v2.6
+      </p>
+    </div>
+
+    <div
+      className="
+        p-8
+        font-mono
+        text-green-400
+        bg-[radial-gradient(circle_at_top,rgba(20,60,140,.15),transparent)]
+      "
+    >
+
+      <p className="mb-4">
+        <span className="text-cyan-400">
+          visitor@dev:
+        </span>
+
+        <span className="text-blue-500">
+          ~/team
+        </span>
+
+        {" "}$
+        ls developers
+      </p>
+
+      <p className="text-slate-500">
+        Lead Developer
+      </p>
+
+      <p className="text-slate-500">
+        Developer 1
+      </p>
+
+      <p className="text-slate-500">
+        Developer 2
+      </p>
+
+      <p className="text-slate-500 mb-6">
+        Developer 3
+      </p>
+
+      <p>
+        <span className="text-cyan-400">
+          visitor@dev:
+        </span>
+
+        <span className="text-blue-500">
+          ~/team
+        </span>
+
+        {" "}$
+        cat selected_user.json
+      </p>
+
+      <div
+        className="
+          mt-5
+          rounded-2xl
+          border
+          border-cyan-950
+          bg-[#06111f]
+          p-5
+        "
+      >
+        <pre className="text-cyan-300 overflow-auto">
+{`{
+  "developer": "${selectedDev}",
+  "status": "active",
+  "access": "granted"
+}`}
+        </pre>
       </div>
 
-    <Footer />
-  </main>
+      <div className="mt-5 text-green-500 animate-pulse">
+        ▌
+      </div>
 
+    </div>
+  </div>
+
+</section>
+
+        {/* DISCORD */}
+
+        <section className="px-6 pb-32">
+          <div
+            className="
+              max-w-7xl mx-auto
+              rounded-[40px] p-10
+              bg-gradient-to-br
+              from-[#000000]
+              to-[#101827]
+              border border-blue-950
+              shadow-2xl
+            "
+          >
+            <div className="text-center">
+              <h1 className="text-white text-4xl md:text-6xl font-bold">
+                Discord Community
+              </h1>
+
+              <p className="mt-4 text-slate-400">
+                Join the community and connect with everyone
+              </p>
+            </div>
+
+            <div className="mt-14 grid grid-cols-1 lg:grid-cols-3 gap-10 justify-items-center">
+              {[1, 2, 3].map((id) => (
+                <iframe
+                  key={id}
+                  src="https://discord.com/widget?id=1397550111344558201&theme=dark"
+                  className="
+                    w-full max-w-[350px]
+                    h-[500px]
+                    rounded-3xl
+                    border border-blue-900
+                    shadow-xl
+                  "
+                  sandbox="
+                    allow-popups
+                    allow-popups-to-escape-sandbox
+                    allow-same-origin
+                    allow-scripts
+                  "
+                />
+              ))}
+            </div>
+          </div>
+        </section>
+      </section>
+
+      <Footer />
+    </main>
   );
 }
 
-export default App
+export default App;
