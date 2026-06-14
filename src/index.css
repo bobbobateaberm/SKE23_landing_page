@@ -311,67 +311,15 @@ h2{
 
 }
 
-/* TABLET */
+/* Mobile */
+@media (max-width: 768px) {
+  .footer-inner {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
 
-@media (min-width:768px){
-
-h2{
-font-size:3rem;
+  .footer-brand p {
+    max-width: none;
+  }
 }
 
-.hero_txt{
-font-size:5rem;
-}
-
-.content{
-
-padding:
-100px
-60px;
-
-}
-
-.committee img{
-
-width:220px;
-
-height:220px;
-
-}
-
-.footer-inner{
-
-grid-template-columns:
-2fr
-1fr
-1fr;
-
-}
-
-}
-
-/* DESKTOP */
-
-@media (min-width:1200px){
-
-.hero_txt{
-
-font-size:6rem;
-
-}
-
-.content{
-
-padding:
-150px
-250px;
-
-}
-
-h2{
-
-font-size:4rem;
-
-}
-
-}
